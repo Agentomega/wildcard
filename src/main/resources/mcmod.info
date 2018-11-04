@@ -1,13 +1,13 @@
 [
 {
-  "modid": "examplemod",
-  "name": "Example Mod",
-  "description": "Example placeholder mod.",
+  "modid": "wildcard",
+  "name": "Wildcard",
+  "description": "A Forge Mod that extends vanilla redstone and other mods by adding item and regex filters.",
   "version": "${version}",
   "mcversion": "${mcversion}",
-  "url": "",
+  "url": "https://github.com/Agentomega/wildcard",
   "updateUrl": "",
-  "authorList": ["ExampleDude"],
+  "authorList": ["Agentomega"],
   "credits": "The Forge and FML guys, for making this example",
   "logoFile": "",
   "screenshots": [],

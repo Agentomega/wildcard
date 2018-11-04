@@ -8,7 +8,7 @@
   "url": "https://github.com/Agentomega/wildcard",
   "updateUrl": "",
   "authorList": ["Agentomega"],
-  "credits": "The Forge and FML guys, for making this example",
+  "credits": "Forge and FML devs for the framework and APIs, and Colin for the Code Cafe that sparked this idea.",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []

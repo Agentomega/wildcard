@@ -8,7 +8,9 @@ import net.minecraft.tileentity.TileEntity;
 import omega.wildcard.Constants;
 
 public abstract class TileEntityFilterHopper extends TileEntity implements IHopper {
-
+	// 0 because we have no numeric-based fields we want to dynamically edit in Hoppers
+	private static final int FIELD_COUNT = 0;
+	
 	private ItemStack[] inventory = new ItemStack[Constants.HOPPER_INV];
 
 	@Override
@@ -34,24 +36,31 @@ public abstract class TileEntityFilterHopper extends TileEntity implements IHopp
 
 	@Override
 	public ItemStack decrStackSize(int index, int count) {
-		ItemStack result = index < Constants.HOPPER_INV ? inventory[index].splitStack(count) : null;
+		ItemStack stack = getStackInSlot(index);
+		ItemStack result = null;
+		
+		if( null != stack && stack.getCount() <= count ) {
+			result = removeStackFromSlot(index);
+		} else if ( null != stack ) {
+			result = stack.splitStack(count);
+		}
 		
 		if (null != result) {
 			markDirty();
 		}
-		
+
 		return result;
 	}
 
 	@Override
 	public ItemStack removeStackFromSlot(int index) {
 		ItemStack stack = getStackInSlot(index);
-		inventory[index] = null;
-		
+		setInventorySlotContents(index, null);
+
 		if (null != stack) {
 			markDirty();
 		}
-		
+
 		return stack;
 	}
 
@@ -70,8 +79,8 @@ public abstract class TileEntityFilterHopper extends TileEntity implements IHopp
 
 	@Override
 	public boolean isUsableByPlayer(EntityPlayer player) {
-		// TODO Auto-generated method stub
-		return false;
+		// default calculation from TileEntityHopper, clean up plois
+		return this.getWorld().getTileEntity(this.pos) != this?false:player.getDistanceSq((double)this.pos.getX() + 0.5D, (double)this.pos.getY() + 0.5D, (double)this.pos.getZ() + 0.5D) <= 64.0D;
 	}
 
 	@Override
@@ -88,26 +97,27 @@ public abstract class TileEntityFilterHopper extends TileEntity implements IHopp
 
 	@Override
 	public boolean isItemValidForSlot(int index, ItemStack stack) {
-		// TODO: Finish logic which checks if index has other item in it
-		return !(index >= Constants.HOPPER_INV || !matchesFilter(stack));
+		ItemStack slotStack = inventory[index];
+		// TODO: Needs overriding in equivalence hopper because matchesFilter
+		// handles this
+		return !(index >= Constants.HOPPER_INV || !matchesFilter(stack)
+				|| (null != slotStack && !(slotStack.isStackable() && ItemStack.areItemsEqual(slotStack, stack))));
 	}
 
 	@Override
 	public int getField(int id) {
-		// TODO Auto-generated method stub
+		// Return default because there are no fields
 		return 0;
 	}
 
 	@Override
 	public void setField(int id, int value) {
-		// TODO Auto-generated method stub
-
+		// Noop because there are no fields
 	}
 
 	@Override
 	public int getFieldCount() {
-		// TODO Auto-generated method stub
-		return 0;
+		return FIELD_COUNT;
 	}
 
 	@Override
@@ -145,6 +155,6 @@ public abstract class TileEntityFilterHopper extends TileEntity implements IHopp
 		// TODO Auto-generated method stub
 		return 0;
 	}
-	
+
 	abstract boolean matchesFilter(ItemStack stack);
 }

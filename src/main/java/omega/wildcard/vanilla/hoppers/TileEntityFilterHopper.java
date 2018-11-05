@@ -154,5 +154,5 @@ public abstract class TileEntityFilterHopper extends TileEntity implements IHopp
 		return this.getPos().getZ();
 	}
 
-	abstract boolean matchesFilter(ItemStack stack);
+	public abstract boolean matchesFilter(ItemStack stack);
 }

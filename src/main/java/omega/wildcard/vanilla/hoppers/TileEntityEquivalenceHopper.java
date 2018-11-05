@@ -5,7 +5,7 @@ import net.minecraft.item.ItemStack;
 public class TileEntityEquivalenceHopper extends TileEntityFilterHopper {
 
 	@Override
-	boolean matchesFilter(ItemStack stack) {
+	public boolean matchesFilter(ItemStack stack) {
 		// TODO Auto-generated method stub
 		return false;
 	}

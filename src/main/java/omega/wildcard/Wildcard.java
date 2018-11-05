@@ -1,4 +1,4 @@
-package omega.wildcard.common;
+package omega.wildcard;
 
 import org.apache.logging.log4j.Logger;
 
@@ -8,10 +8,10 @@ import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
-@Mod(modid = WildcardConstants.MODID, name = WildcardConstants.NAME, version = WildcardConstants.VERSION)
+@Mod(modid = Constants.MODID, name = Constants.NAME, version = Constants.VERSION)
 public class Wildcard {
-	private static final String NAME = WildcardConstants.NAME;
-	private static final String VERSION = WildcardConstants.VERSION;
+	private static final String NAME = Constants.NAME;
+	private static final String VERSION = Constants.VERSION;
 	
 	private static Logger logger;
 	

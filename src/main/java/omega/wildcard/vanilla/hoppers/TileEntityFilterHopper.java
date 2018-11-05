@@ -79,8 +79,9 @@ public abstract class TileEntityFilterHopper extends TileEntity implements IHopp
 
 	@Override
 	public boolean isUsableByPlayer(EntityPlayer player) {
-		// default calculation from TileEntityHopper, clean up plois
-		return this.getWorld().getTileEntity(this.pos) != this?false:player.getDistanceSq((double)this.pos.getX() + 0.5D, (double)this.pos.getY() + 0.5D, (double)this.pos.getZ() + 0.5D) <= 64.0D;
+		// default calculation from TileEntityHopper
+		// TODO: clean this up
+		return this.getWorld().getTileEntity(this.getPos()) != this?false:player.getDistanceSq((double)this.pos.getX() + 0.5D, (double)this.pos.getY() + 0.5D, (double)this.pos.getZ() + 0.5D) <= 64.0D;
 	}
 
 	@Override
@@ -140,20 +141,17 @@ public abstract class TileEntityFilterHopper extends TileEntity implements IHopp
 
 	@Override
 	public double getXPos() {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.getPos().getX();
 	}
 
 	@Override
 	public double getYPos() {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.getPos().getY();
 	}
 
 	@Override
 	public double getZPos() {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.getPos().getZ();
 	}
 
 	abstract boolean matchesFilter(ItemStack stack);

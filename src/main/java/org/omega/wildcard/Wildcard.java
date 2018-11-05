@@ -1,4 +1,4 @@
-package omega.wildcard;
+package org.omega.wildcard;
 
 import org.apache.logging.log4j.Logger;
 

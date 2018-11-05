@@ -1,8 +1,8 @@
-package omega.wildcard.vanilla.hoppers;
+package org.omega.wildcard.vanilla.hoppers;
 
 import net.minecraft.item.ItemStack;
 
-public class TileEntityRegexHopper extends TileEntityFilterHopper {
+public class TileEntityEquivalenceHopper extends TileEntityFilterHopper {
 
 	@Override
 	public boolean matchesFilter(ItemStack stack) {

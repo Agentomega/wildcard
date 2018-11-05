@@ -99,6 +99,7 @@ public abstract class TileEntityFilterHopper extends TileEntity implements IHopp
 	@Override
 	public boolean isItemValidForSlot(int index, ItemStack stack) {
 		ItemStack slotStack = inventory[index];
+		// TODO: split these out into sensible (public) booleans
 		// TODO: Needs overriding in equivalence hopper because matchesFilter
 		// handles this
 		return !(index >= Constants.HOPPER_INV || !matchesFilter(stack)

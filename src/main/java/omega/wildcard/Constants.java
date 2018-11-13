@@ -1,4 +1,4 @@
-package org.omega.wildcard;
+package omega.wildcard;
 
 public class Constants {
 	public static final String MODID = "wildcard";

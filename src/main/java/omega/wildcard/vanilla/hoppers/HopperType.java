@@ -1,4 +1,4 @@
-package org.omega.wildcard.vanilla.hoppers;
+package omega.wildcard.vanilla.hoppers;
 
 public enum HopperType {
 	EQUIVALENCE("Equivalence Hopper"),

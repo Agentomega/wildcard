@@ -1,6 +1,4 @@
-package org.omega.wildcard.vanilla.hoppers;
-
-import org.omega.wildcard.Constants;
+package omega.wildcard.vanilla.hoppers;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -8,6 +6,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.network.play.server.SPacketTitle.Type;
 import net.minecraft.tileentity.IHopper;
 import net.minecraft.tileentity.TileEntity;
+import omega.wildcard.Constants;
 
 public abstract class TileEntityFilterHopper extends TileEntity implements IHopper {
 	// 0 because we have no numeric-based fields we want to dynamically edit in Hoppers

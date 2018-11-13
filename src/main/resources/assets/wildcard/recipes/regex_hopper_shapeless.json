@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "pattern":
+    [
+        "fc ",
+        "hl ",
+        "   "
+    ],
+    "ingredients": [
+        {
+            "item": "wildcard:equivalence_hopper"
+        },
+        {
+            "item": "minecraft:writeable_book"
+        }
+    ],
+    "result": {
+        "item": "wildcard:regex_hopper",
+        "count": 1
+    }
+}

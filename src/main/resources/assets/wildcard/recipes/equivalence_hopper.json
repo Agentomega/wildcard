@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "fc ",
+        "hl ",
+        "   "
+    ],
+    "key": {
+        "f": {
+            "item": "minecraft:item_frame"
+        },
+        "c": {
+            "item": "minecraft:comparator"
+        },
+        "h": {
+            "item": "minecraft:hopper"
+        },
+        "l": {
+            "item": "minecraft:lever"
+        }
+    },
+    "result": {
+        "item": "wildcard:equivalence_hopper",
+        "count": 1
+    }
+}

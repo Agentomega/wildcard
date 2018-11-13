@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "bc ",
+        "hl ",
+        "   "
+    ],
+    "key": {
+        "b": {
+            "item": "minecraft:writeable_book"
+        },
+        "c": {
+            "item": "minecraft:comparator"
+        },
+        "h": {
+            "item": "minecraft:hopper"
+        },
+        "l": {
+            "item": "minecraft:lever"
+        }
+    },
+    "result": {
+        "item": "wildcard:regex_hopper",
+        "count": 1
+    }
+}

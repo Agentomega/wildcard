@@ -5,6 +5,7 @@ import org.omega.wildcard.Constants;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.network.play.server.SPacketTitle.Type;
 import net.minecraft.tileentity.IHopper;
 import net.minecraft.tileentity.TileEntity;
 
@@ -13,6 +14,8 @@ public abstract class TileEntityFilterHopper extends TileEntity implements IHopp
 	private static final int FIELD_COUNT = 0;
 	
 	private ItemStack[] inventory = new ItemStack[Constants.HOPPER_INV];
+	
+	private FilterLocation filterOn = FilterLocation.INCOMING;
 
 	@Override
 	public int getSizeInventory() {
@@ -87,24 +90,18 @@ public abstract class TileEntityFilterHopper extends TileEntity implements IHopp
 
 	@Override
 	public void openInventory(EntityPlayer player) {
-		// TODO Auto-generated method stub
-
+		// TODO: Should be able to noop here, but double-check
 	}
 
 	@Override
 	public void closeInventory(EntityPlayer player) {
-		// TODO Auto-generated method stub
-
+		// TODO: Should be able to noop here, but double-check.
 	}
 
 	@Override
 	public boolean isItemValidForSlot(int index, ItemStack stack) {
-		ItemStack slotStack = inventory[index];
-		// TODO: split these out into sensible (public) booleans
-		// TODO: Needs overriding in equivalence hopper because matchesFilter
-		// handles this
-		return !(index >= Constants.HOPPER_INV || !matchesFilter(stack)
-				|| (null != slotStack && !(slotStack.isStackable() && ItemStack.areItemsEqual(slotStack, stack))));
+		ItemStack slotStack = getStackInSlot(index);
+		return null == slotStack || (slotStack.isStackable() && ItemStack.areItemsEqual(slotStack, stack));
 	}
 
 	@Override
@@ -131,7 +128,6 @@ public abstract class TileEntityFilterHopper extends TileEntity implements IHopp
 
 	@Override
 	public String getName() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

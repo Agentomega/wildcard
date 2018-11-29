@@ -1,19 +1,18 @@
 package omega.wildcard.vanilla.hoppers;
 
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.network.play.server.SPacketTitle.Type;
 import net.minecraft.tileentity.IHopper;
 import net.minecraft.tileentity.TileEntity;
 import omega.wildcard.Constants;
 
 public abstract class TileEntityFilterHopper extends TileEntity implements IHopper {
-	// 0 because we have no numeric-based fields we want to dynamically edit in Hoppers
+	// 0 because we have no numeric-based fields we want to dynamically edit in
+	// Hoppers
 	private static final int FIELD_COUNT = 0;
-	
+
 	private ItemStack[] inventory = new ItemStack[Constants.HOPPER_INV];
-	
+
 	private FilterLocation filterOn = FilterLocation.INCOMING;
 
 	@Override
@@ -41,13 +40,13 @@ public abstract class TileEntityFilterHopper extends TileEntity implements IHopp
 	public ItemStack decrStackSize(int index, int count) {
 		ItemStack stack = getStackInSlot(index);
 		ItemStack result = null;
-		
-		if( null != stack && stack.getCount() <= count ) {
+
+		if (null != stack && stack.getCount() <= count) {
 			result = removeStackFromSlot(index);
-		} else if ( null != stack ) {
+		} else if (null != stack) {
 			result = stack.splitStack(count);
 		}
-		
+
 		if (null != result) {
 			markDirty();
 		}
@@ -84,7 +83,9 @@ public abstract class TileEntityFilterHopper extends TileEntity implements IHopp
 	public boolean isUsableByPlayer(EntityPlayer player) {
 		// default calculation from TileEntityHopper
 		// TODO: clean this up
-		return this.getWorld().getTileEntity(this.getPos()) != this?false:player.getDistanceSq((double)this.pos.getX() + 0.5D, (double)this.pos.getY() + 0.5D, (double)this.pos.getZ() + 0.5D) <= 64.0D;
+		return this.getWorld().getTileEntity(this.getPos()) != this ? Boolean.FALSE
+				: player.getDistanceSq((double) this.pos.getX() + 0.5D, (double) this.pos.getY() + 0.5D,
+						(double) this.pos.getZ() + 0.5D) <= 64.0D;
 	}
 
 	@Override

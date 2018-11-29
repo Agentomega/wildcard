@@ -14,4 +14,11 @@ public class Constants {
 	 * Constants for Hoppers
 	 */
 	public static final int HOPPER_INV = 4;
+	
+	/*
+	 * Constructor to appease Sonar
+	 */
+	private Constants() {
+		//noop
+	}
 }

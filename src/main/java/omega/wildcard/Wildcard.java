@@ -22,7 +22,7 @@ public class Wildcard {
 	private static boolean thermalDynamicsLoaded;
 	
 	@EventHandler
-    public void preInit(FMLPreInitializationEvent event)
+    public static void preInit(FMLPreInitializationEvent event)
     {
         logger = event.getModLog();
         
@@ -30,8 +30,16 @@ public class Wildcard {
     }
 	
 	@EventHandler
-    public void init(FMLInitializationEvent event)
+    public static void init(FMLInitializationEvent event)
     {
         logger.info("Initializing " + NAME + " version " + VERSION);
     }
+	
+	/*
+	 * Constructor to appease Sonar
+	 */
+	
+	private Wildcard() {
+		//noop
+	}
 }

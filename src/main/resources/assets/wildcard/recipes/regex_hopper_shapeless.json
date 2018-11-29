@@ -1,11 +1,5 @@
 {
     "type": "minecraft:crafting_shapeless",
-    "pattern":
-    [
-        "fc ",
-        "hl ",
-        "   "
-    ],
     "ingredients": [
         {
             "item": "wildcard:equivalence_hopper"

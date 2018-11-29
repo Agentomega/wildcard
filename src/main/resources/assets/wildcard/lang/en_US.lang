@@ -1,0 +1,4 @@
+tile.equivalence_hopper.name=Equivalence Hopper
+tile.regex_hopper.name=Regex Hopper
+container.equivalence_hopper=Equivalence Hopper
+container.regex_hopper=Regex Hopper

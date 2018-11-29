@@ -1,0 +1,4 @@
+tile.equivalence_hopper.name=Entonnoir d'Équivalence
+tile.regex_hopper.name=Entonnoir de Motif
+container.equivalence_hopper=Entonnoir d'Équivalence
+container.regex_hopper=Entonnoir de Motif

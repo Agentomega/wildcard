@@ -1,0 +1,4 @@
+tile.equivalence_hopper.name=同等のホッパー
+tile.regex_hopper.name=正規表現のホッパー
+container.equivalence_hopper=同等のホッパー
+container.regex_hopper=正規表現のホッパー

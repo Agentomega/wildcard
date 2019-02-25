@@ -1,9 +1,16 @@
-package omega.wildcard;
+package omega.wildcard.common;
 
-public class Constants {
+public final class Constants {
 	public static final String MODID = "wildcard";
 	public static final String NAME = "Wildcard";
 	public static final String VERSION = "0.1";
+	
+	/*
+	 * General Constants
+	 */
+	public static final String BLANK = "";
+	
+	public static final String NBT_CUSTOM_NAME = "CustomName";
 	
 	/*
 	 * Constants for Vanilla

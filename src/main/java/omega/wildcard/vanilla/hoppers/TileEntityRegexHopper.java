@@ -10,4 +10,10 @@ public class TileEntityRegexHopper extends TileEntityFilterHopper {
 		return false;
 	}
 
+	@Override
+	public String getDefaultName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

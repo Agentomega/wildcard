@@ -1,21 +1,19 @@
 package omega.wildcard.vanilla.hoppers;
 
-import net.minecraft.block.BlockContainer;
+import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
-public class BlockEquivalenceHopper extends BlockContainer {
+public class BlockEquivalenceHopper extends BlockFilterHopper {
 
-	protected BlockEquivalenceHopper(Material materialIn) {
-		super(materialIn);
-		// TODO Auto-generated constructor stub
+	protected BlockEquivalenceHopper(Material mType, MapColor cType) {
+		super(mType, cType);
 	}
 
 	@Override
 	public TileEntity createNewTileEntity(World worldIn, int meta) {
-		// TODO Auto-generated method stub
-		return null;
+		return new TileEntityEquivalenceHopper();
 	}
 
 }

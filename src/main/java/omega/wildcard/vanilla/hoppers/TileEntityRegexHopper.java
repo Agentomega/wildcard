@@ -16,4 +16,10 @@ public class TileEntityRegexHopper extends TileEntityFilterHopper {
 		return null;
 	}
 
+	@Override
+	public void update() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
